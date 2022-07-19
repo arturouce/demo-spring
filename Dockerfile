@@ -1,6 +1,6 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11-jdk-alpine
 
-ADD target/springbootapp-0.0.1-SNAPSHOT.jar app.jar
+ADD target/demo1-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 

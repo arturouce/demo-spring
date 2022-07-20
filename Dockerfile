@@ -1,4 +1,4 @@
-FROM openjdk:11.0.15-jre
+FROM openjdk:11.0.15-jdk
 
 WORKDIR /demo1
 
@@ -11,8 +11,6 @@ RUN chmod +x mvnw
 RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target/
 
 COPY ./src /demo1/src
-
-RUN ls
 
 RUN ./mvnw clean package -DskipTests
 

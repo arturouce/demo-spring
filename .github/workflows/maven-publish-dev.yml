@@ -27,6 +27,14 @@ jobs:
     - name: Test with maven
       run: mvn test
       
+    - name: Log into
+      uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: 'arturouce35'
+        password: 'Hellsing.35'
+          
+      
     - name: Build and push Docker image
       id: build-and-push
       uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a

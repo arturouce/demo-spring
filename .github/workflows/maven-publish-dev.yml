@@ -39,5 +39,5 @@ jobs:
       uses: appleboy/ssh-action@v0.1.2
       with: 
         host: ${{secrets.SSH_HOST_DEMO_SPRING_DEV}}  
-        key: ${{secrets.SSH_KEY_DEMO_SPRING_DEV}} 
+        password: ${{secrets.SSH_KEY_DEMO_SPRING_DEV}} 
         username: ${{secrets.SSH_USER_DEMO_SPRING_DEV}}

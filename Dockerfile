@@ -8,7 +8,7 @@ COPY ./mvnw .
 COPY ./pom.xml .
 
 RUN chmod +x mvnw
-RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm ./target/
+RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target/
 RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080

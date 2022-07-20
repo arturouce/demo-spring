@@ -1,16 +1,16 @@
 FROM openjdk:11.0.15-jre
 
-WORKDIR /app/demo1
+WORKDIR /demo1
 
-COPY ./pom.xml /app
-COPY ./.mvn ./.mvn
-COPY ./mvnw .
-COPY ./pom.xml .
+COPY ./pom.xml /demo1
+COPY ./.mvn /demo1/.mvn
+COPY ./mvnw /demo1
+#COPY ./pom.xml /app/demo1
 
 RUN chmod +x mvnw
 RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target/
 
-COPY ./src ./src
+COPY ./src /demo1/src
 
 RUN ls
 

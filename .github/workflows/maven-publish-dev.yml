@@ -27,46 +27,21 @@ jobs:
     - name: Test with maven
       run: mvn test
       
-    - name: Log into
-      uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
-      with:
-        registry: ${{ env.REGISTRY }}
-        username: 'arturouce35'
-        password: 'Hellsing.35'
-          
-      
-    - name: Build and push Docker image
-      id: build-and-push
-      uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
-      with:
-          context: .
-          push: 'true'
-          tags: 'arturouce35/demo-spring-dev:demo-spring-dev-latest'
-          labels: 'demo'
-  
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    
-    steps:
-    - name: DigitalOcean App Platform deployment
-      uses: digitalocean/app_action@main
-      with:
-        app_name: 'ubuntu-s-1vcpu-1gb-amd-sfo3-01'
-        token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
-        images: '[
-                  {
-                    "name": "demo-spring-dev",
-                     "image": {
-                      "registry_type": "DOCR",
-                      "repository": "arturouce35/demo-spring-dev",
-                      "tag": "demo-spring-dev-latest"
-                    },
-                  }
-                ]'
+    #- name: Log into
+    #  uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
+    #  with:
+    #    registry: ${{ env.REGISTRY }}
+    #    username: 'arturouce35'
+    #    password: 'Hellsing.35'
+     
+    #- name: Build and push Docker image
+    #  id: build-and-push
+    #  uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+    #  with:
+    #      context: .
+    #      push: 'true'
+    #      tags: 'arturouce35/demo-spring-dev:demo-spring-dev-latest'
+    #      labels: 'demo'
     #- name: Deploy with maven 
     #  uses: appleboy/ssh-action@v0.1.2
     #  with: 

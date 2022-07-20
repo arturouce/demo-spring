@@ -1,9 +1,12 @@
 FROM openjdk:11.0.15-jre
 
-WORKDIR /app
+WORKDIR /app/demo1
 
+COPY ./pom.xml /app
 COPY ./target/demo1-0.0.1-SNAPSHOT.jar .
+
+RUN ./mvnw clean package
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","demo1-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","./target/demo1-0.0.1-SNAPSHOT.jar"]

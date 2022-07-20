@@ -26,7 +26,7 @@ jobs:
         key: ${{SSH_KEY_DEMO_SPRING_DEV}} 
         username: ${{SSH_USER_DEMO_SPRING_DEV}}
         
-        script: |
+        script: | 
           mkdir demo
           cd demo
           git clone https://github.com/arturouce/demo-spring.git

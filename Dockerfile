@@ -12,6 +12,8 @@ RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repac
 
 COPY ./src ./src
 
+RUN ls
+
 RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080

@@ -3,9 +3,9 @@ FROM openjdk:11.0.15-jre
 WORKDIR /app/demo1
 
 COPY ./pom.xml /app
-COPY ./demo1/.mvn ./.mvn
-COPY ./demo1/mvnw .
-COPY ./demo1/pom.xml .
+COPY ./.mvn ./.mvn
+COPY ./mvnw .
+COPY ./pom.xml .
 
 RUN chmod +x mvnw
 RUN ./mvnw clean package

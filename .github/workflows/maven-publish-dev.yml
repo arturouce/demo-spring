@@ -45,7 +45,7 @@ jobs:
           labels: 'demo'
   
   deploy:
-
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -55,7 +55,7 @@ jobs:
     - name: DigitalOcean App Platform deployment
       uses: digitalocean/app_action@main
       with:
-        app_name: ubuntu-s-1vcpu-1gb-amd-sfo3-01
+        app_name: 'ubuntu-s-1vcpu-1gb-amd-sfo3-01'
         token: ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
         images: '[
                   {

@@ -26,6 +26,15 @@ jobs:
       run: mvn clean package -DskipTests --file pom.xml
     - name: Test with maven
       run: mvn test
+  
+  deploy:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
     - name: Deploy with maven 
       uses: appleboy/ssh-action@v0.1.2
       with: 

@@ -3,6 +3,7 @@ FROM openjdk:11.0.15-jre
 WORKDIR /app/demo1
 
 COPY ./pom.xml /app
+COPY ./demo1 .
 
 RUN chmod +x mvnw
 RUN ./mvnw clean package

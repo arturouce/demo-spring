@@ -4,6 +4,7 @@ WORKDIR /app/demo1
 
 COPY ./pom.xml /app
 
+RUN chmod +x mvnw
 RUN ./mvnw clean package
 
 EXPOSE 8080

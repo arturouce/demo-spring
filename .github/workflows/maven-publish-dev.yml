@@ -26,7 +26,8 @@ jobs:
       run: mvn clean package -DskipTests --file pom.xml
     - name: Test with maven
       run: mvn test
-      
+    
+    #  needs: job1
     #- name: Log into
     #  uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
     #  with:

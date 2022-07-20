@@ -8,7 +8,8 @@ COPY ./mvnw .
 COPY ./pom.xml .
 
 RUN chmod +x mvnw
-RUN ./mvnw clean package
+RUN ./mvnw clean package -Dmaven.test.skip
+RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 

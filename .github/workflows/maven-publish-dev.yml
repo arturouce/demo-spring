@@ -22,9 +22,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        host: ${{ SSH_HOST_DEMO_SPRING_DEV }}  
-        key: ${{ SSH_KEY_DEMO_SPRING_DEV }} 
-        username: ${{ SSH_USER_DEMO_SPRING_DEV }}
+        host: ${{SSH_HOST_DEMO_SPRING_DEV}}  
+        key: ${{SSH_KEY_DEMO_SPRING_DEV}} 
+        username: ${{SSH_USER_DEMO_SPRING_DEV}}
         
         script: |
           mkdir demo
